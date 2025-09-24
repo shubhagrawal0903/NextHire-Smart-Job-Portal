@@ -2,6 +2,8 @@
 import { Avatar, Badge, Button, Card, Flex, Heading } from '@radix-ui/themes'
 import { Box, Text } from '@radix-ui/themes'
 import { ChevronRight } from 'lucide-react'
+import { useContext } from 'react'
+import { Context } from '../context/theme-context'
 
 type JobCardProps = {
     job: any;
@@ -10,6 +12,9 @@ type JobCardProps = {
 };
 
 export default function JobCard({ job, fromSearch = false, onViewDetails }: JobCardProps) {
+    const themeContext = useContext(Context);
+    const { isDark } = themeContext || { isDark: false };
+    
     // Accessibility: Card is focusable, button has aria-label
     return (
         <Card
@@ -21,7 +26,7 @@ export default function JobCard({ job, fromSearch = false, onViewDetails }: JobC
                 height: 320,
                 display: "flex",
                 flexDirection: "column",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.08)",
+                boxShadow: isDark ? "0 2px 8px rgba(0,0,0,0.3)" : "0 2px 8px rgba(0,0,0,0.08)",
             }}
             className="job-card-enhanced"
         >

@@ -2,3 +2,25 @@
 @import "@radix-ui/themes/styles.css";
 
 /* Basic styles without animations */
+
+/* Clerk component overrides for compact sizing */
+.cl-userButtonBox {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.cl-userButtonAvatarBox {
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.cl-signedOut {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+.cl-signedIn {
+  display: flex !important;
+  align-items: center !important;
+}
